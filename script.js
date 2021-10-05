@@ -19,9 +19,9 @@ if (true) {
 
 
 let rollback = 95; 
+
+let fullPrice;
 console.log('"Стоимость верстки экранов ' + screenPrice + ' рублей/ долларов/гривен/юани” и “Стоимость разработки сайта ' + fullPrice + ' рублей/ долларов/гривен/юани”');
-let servicePercentPrice = Math.ceil(fullPrice * (rollback/100));
-console.log(servicePercentPrice);
 
 let adaptive = confirm('Нужен ли адаптив на сайте?');
 console.log(adaptive);
@@ -36,8 +36,12 @@ console.log(service2);
 let servicePrice2 = prompt("Сколько это будет стоить?");
 console.log(servicePrice2);
 
-let fullPrice = Number(screenPrice) + Number(servicePrice1) + Number(servicePrice2);
+
+fullPrice = Number(screenPrice) + Number(servicePrice1) + Number(servicePrice2);
 console.log(fullPrice);
+
+let servicePercentPrice = Math.ceil(fullPrice * (rollback/100));
+console.log(servicePercentPrice);
 
 if (fullPrice > 30000 ) {
     console.log('Даем скидку в 10%');
