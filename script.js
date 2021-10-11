@@ -31,7 +31,7 @@ const asking = function() {
 
 const getAllServicePrices = function () {
   let sum = 0;
-  for (let i = 0, t; i < 2; i++) {
+  for (let i = 0, cost; i < 2; i++) {
     if (i === 0) {
       service1 = prompt('Какой дополнительный тип услуги нужен?');
     } else if (i === 1) {
@@ -39,10 +39,10 @@ const getAllServicePrices = function () {
     }
 
       do {
-      t = prompt('Сколько это будет стоить?');
+      cost = prompt('Сколько это будет стоить?')
     }
-    while (!isNumber(j))
-    sum += +t;
+    while (!isNumber(cost))
+    sum += +cost;
   }
   return sum;
 }
@@ -78,8 +78,9 @@ const getRollbackMessage = function(price) {
   }
 }
 
-asking()
+asking();
 allServicePrices = getAllServicePrices();
+
 fullPrice = getFullPrice();
 servicePercentPrice = getServicePercentPrices();
 title = getTitle();
