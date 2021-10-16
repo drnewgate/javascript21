@@ -7,7 +7,7 @@ const appData = {
   adaptive: true,
   service1: '',
   service2: '',
-  rollback: 10,
+  rollback: 20,
   allServicePrices: 0,
   servicePercentPrice: 0,
   fullPrice: 0,
