@@ -88,7 +88,7 @@ const appData = {
   },
   addPrices: function() {
     for (let screen of appData.screens) {
-        appData.screenPrice += +screen.price
+      appData.screenPrice += +screen.price
     }
 
     for (let key in appData.services) {
@@ -103,7 +103,7 @@ const appData = {
   return isNaN(+str)
   },
   getFullPrice: function () {
-    appData.fullPrice = +appData.screenPrice + +appData.allServicePrices
+    appData.fullPrice = +appData.screenPrice + +appData.allServicePrices;
   },
   getTitle: function () {
     appData.title = appData.title.trim().toLowerCase()
