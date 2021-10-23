@@ -1,134 +1,43 @@
 'use strict';
+const books = document.querySelectorAll('.books')
+const book = document.querySelectorAll('.book')
+const h2 = document.querySelectorAll('h2')
+const ul = document.querySelectorAll('ul')
+const li = document.querySelectorAll('li')
 
-const title = document.getElementsByTagName('h1')
-console.log(title[0])
+console.log(book)
+console.log(books)
+console.log(li)
+console.log(ul)
 
-const handlerBtn = document.getElementsByClassName('handler_btn')
-console.log(handlerBtn)
+books[0].prepend(book[1])
+book[2].before(book[5])
+book[5].before(book[3])
+book[3].before(book[4])
+book[4].before(book[0])
 
-const screenBtn = document.querySelector('.screen-btn')
-console.log(screenBtn)
+const image = document.querySelector("body")
+.style.backgroundImage = "URL('./image/you-dont-know-js.jpg')"
 
-const itemPercent = document.querySelectorAll('.percent')
-console.log(itemPercent)
+const newHeader = document.createElement('h2')
+newHeader.innerHTML = '<a href="https://github.com/azat-io/you-dont-know-js-ru/blob/master/this%20%26%20object%20prototypes/README.md#you-dont-know-js-this--object-prototypes" target="_blank">Книга 3. this и Прототипы Объектов</a>'
+h2[4].replaceWith(newHeader)
 
-const itemNumber = document.querySelectorAll('.number')
-console.log(itemNumber)
+li[2].before(li[3])
+li[4].after(li[5]) 
+li[9].after(li[2])
+li[2].after(li[10])
+li[4].before(li[6]) 
+li[4].before(li[8]) 
 
-const range = document.querySelector('.main-controls__item.rollback input[type="range"]')
-console.log(range)
+li[47].after(li[55]) 
+li[55].after(li[49])  
+li[49].after(li[50]) 
+li[53].after(li[51])
 
-const span = document.querySelector('.rollback .range-value')
-console.log(span)
+const adv = document.querySelector(".adv")
+adv.remove()
 
-const input = document.getElementsByClassName('total-input')
-console.log(input[0])
-console.log(input[1])
-console.log(input[2])
-console.log(input[3])
-console.log(input[4])
-
-let blockscreen = document.querySelectorAll('.screen')
-console.log(blockscreen)
-
-const appData = {
-  title: '',
-  screens: [],
-  screenPrice: 0,
-  adaptive: true,
-  services: {},
-  rollback: 10,
-  allServicePrices: 0,
-  servicePercentPrice: 0,
-  fullPrice: 0,
-  start: function () {
-    appData.asking();
-    this.addPrices();
-    appData.getFullPrice();
-    appData.getServicePercentPrices();
-    appData.getTitle();
-    appData.logger();
-  },
-  asking: function () {
-    
-    do {
-      appData.title = prompt('Как называется ваш проект?', 'Калькулятор верстки');
-    } while (!appData.isString(appData.title));
-      /* appData.title = appData.getTitle();  */
-    
-    for (let i = 0; i < 2; i++) {
-        let name;
-        let price = 0;
-      do {
-         name = prompt('Какие типы экранов нужно разработать?' , 'Простые, сложные, адаптивные');
-      } while (!appData.isString(name)); 
-
-      do {
-         price = prompt('Сколько будет стоить данная работа?' , '2000');
-      } while (!appData.isNumber(price)); 
-
-      appData.screens.push({ id: i, name: name, price: price })
-    }
-
-    for (let i = 0, cost; i < 2; i++) {  
-      let name; 
-
-      do {
-        name = prompt('Какой дополнительный тип услуги нужен?');
-      } while (!isNaN(name));     
-
-      do {
-        cost = prompt('Сколько это будет стоить?', '2500');
-      }
-      while (!appData.isNumber(cost))
-      
-      appData.services[name] = +cost
-    }
-    appData.adaptive = confirm('Нужен ли адаптив на сайте?');
-  },
-  addPrices: function() {
-    for (let screen of appData.screens) {
-      appData.screenPrice += +screen.price
-    }
-
-    for (let key in appData.services) {
-      appData.allServicePrices += appData.services[key]
-    }
-
-  },
-  isNumber: function (num) {
-    return !isNaN(parseFloat(num)) && isFinite(num) 
-  }, 
-  isString: function (str) {
-  return isNaN(+str)
-  },
-  getFullPrice: function () {
-    appData.fullPrice = +appData.screenPrice + +appData.allServicePrices;
-  },
-  getTitle: function () {
-    appData.title = appData.title.trim().toLowerCase()
-    appData.title = appData.title[0].toUpperCase() + appData.title.slice(1)
-  },
-  getServicePercentPrices: function () {
-    appData.servicePercentPrice = appData.fullPrice - (appData.fullPrice * (appData.rollback/100))
-  },
-  getRollbackMessage: function(price) {      
-    let message;                               
-    if (price >= 30000 ) {
-      message = 'Даем скидку в 10%';
-    }  else if (price >= 15000 && price < 30000) {
-      message = 'Даем скидку в 5%';
-    }  else if (price >= 0 && price < 15000) {
-      message = 'Скидка не предусмотрена';
-    }  else {
-      message = 'Что-то пошло не так';
-    }
-    return message;
-  },
-  logger(){
-    for(let key in appData) {
-      console.log('Ключ: ' + key + ' Значение: ' + appData[key])
-    }
-  } 
-}
-appData.start();
+const newList = document.createElement("li")
+newList.textContent = "Глава 8: За пределами ES6"
+li[25].append(newList)
