@@ -91,8 +91,8 @@ const appData = {
     this.addServicesNumber();
     this.addPrices();
     this.showResult();
-    console.log(this);
-      
+    console.log(this);  
+
   },
   clear: function () {
     startBtn.style.display = "none";
@@ -119,7 +119,6 @@ const appData = {
     screens[0].querySelector("input").placeholder = "Количество экранов";
       
     screens[0].querySelector("select").options[0].selected = true;
-
 
     startBtn.style.display = "block"
     resetBtn.style.display = "none"
@@ -151,7 +150,6 @@ const appData = {
       //итоговая стоимость
       totalCountRollback.value = this.priceRollback
       //стоимость с учетом отката
-
   },
       //блок дополнительно main-controls__checkbox, слева
   addServicesPercent: function () { 
@@ -163,7 +161,6 @@ const appData = {
               this.servicesPercent[label] = +percent
 			    }
 	 	  })
-
   },
   addServicesNumber: function () { 
       otherItemsNumber.forEach((elem) => {
@@ -174,7 +171,6 @@ const appData = {
               this.servicesNumber[label] = +number
           }
       })
-
   }, 
   addScreenBlock: function () {
       screens = document.querySelectorAll(".screen")
